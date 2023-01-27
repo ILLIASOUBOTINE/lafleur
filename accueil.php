@@ -5,6 +5,9 @@ require './doctype/head.php'
 require './components/header.php'
 ?>
 <?php
+require './components/nav_seconde.php'
+?>
+<?php
 require './components/populaire1.php'
 ?>
 <?php

@@ -1,7 +1,20 @@
+//
+
+if (window.innerWidth > 841) {
+    document.querySelectorAll('.listFiltre')[0].remove();
+    document.querySelectorAll('.filtreProduit')[0].remove();
+    
+    console.dir(document.querySelectorAll('.listFiltre'));
+} else {
+    console.dir(document.querySelectorAll('.listFiltre'));
+}
+//  
 const burgerMenu = document.querySelector('.burger_menu');
 const dropMenu = document.querySelector('.drop_menu');
 const itemdropMenu = document.querySelector('.itemdrop_menu');
+// const listFiltre = document.querySelector('.listFiltre');
 const filtreProduit = document.querySelector('#filtreProduit');
+
 const filtrePrix = document.querySelector('#filtrePrix');
 const filtreFleur = document.querySelector('#filtreFleur');
 const filtreCategorie = document.querySelector('#filtreCategorie');
@@ -9,7 +22,16 @@ const filtreCouleur = document.querySelector('#filtreCouleur');
 const idLivraison = document.querySelector('.idlivraison');
 const prix = document.querySelector('#prix');
 const inputSearchVille = document.querySelector('#inputSearchVille');
-console.dir(inputSearchVille);
+
+
+
+//  update page 
+window.addEventListener('resize', function() {
+    location.reload();
+});
+
+
+
 
 
 //  burger menue  
@@ -28,7 +50,10 @@ burgerMenu.addEventListener('click', (event)=>{
 
 //  list filtre 
 
+
+
 filtreProduit.addEventListener('click', (event)=>{
+    console.log('tyt');
     document.querySelector('#itemFiltre').classList.toggle('dnone');
     document.querySelector('#filtreProduit>img').classList.toggle('icon_triangle');
 });
@@ -71,18 +96,15 @@ document.querySelector('#livraisonVilleFermer').addEventListener('click', (event
 
 inputSearchVille.addEventListener("input", (e) => {
     let str = e.target.value;
-    console.log(str);
     let villes = document.querySelectorAll('.item_ville');
-    console.log(villes);
     for (let ville of villes) {
-      if (ville.textContent.toLowerCase().match(str.toLowerCase())){
-        // ville.classList.remove("dnone");
-        ville.style.display = 'flex';
-      } else {
-        ville.style.display = 'none';
-      }
+        if (ville.textContent.toLowerCase().match(str.toLowerCase())){
+            ville.classList.remove("dnone");
+            // ville.style.display = 'flex';
+        } else {
+            ville.classList.add("dnone");
+            // ville.style.display = 'none';
+        }
     }
-  
-   
-  });
+});
 

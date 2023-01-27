@@ -15,12 +15,16 @@
         <a href="#"><img class="cursorscall20" src="imgs/account_icon.svg" alt="account"></a>
     </nav>
 
-    <nav class="drop_menu">
+    <nav id="idDropMenue" class="drop_menu">
 
         <a class="pd24w600 itemdrop" href="accueil.php">Accueil</a>
         <a class="pd24w600 itemdrop" href="contact.php">Contact</a>
         <a class="pd24w600 itemdrop" href="#">Blog</a>
-        <?php include 'uix/list_dropdown.php'?>
+        <div id="filtreProduit" class="pd24w600 itemdrop filtreProduit">
+            <span>Filtre produit</span>
+            <img src="imgs/icons_triangle-down.svg" alt="">
+        </div>
+        <?php include 'uix/list_filtre.php'?>
 
     </nav>
     <a class="logo cursorscall20" href="accueil.php"><img src="imgs/logo.png" alt="accueil"></a>
@@ -34,5 +38,6 @@
        
     <img src="imgs/basket_icon.svg" alt="panier">
     </nav> -->
+
     <?php include 'uix/list_livraison.php'?>
 </header>

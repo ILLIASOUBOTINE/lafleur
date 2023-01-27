@@ -1,9 +1,9 @@
-<form action="#" method="POST" class="itemdrop_menu">
-    <div id="filtreProduit" class="pd24w600 itemdrop">
+<form action="#" method="POST" class="itemdrop_menu listFiltre">
+    <!-- <div id="filtreProduit" class="pd24w600 itemdrop ">
         <span>Filtre produit</span>
         <img src="imgs/icons_triangle-down.svg" alt="">
-    </div>
-    <div class="itemdrop_menu dnone" id="itemFiltre">
+    </div> -->
+    <div class="itemdrop_menu dnone itemFiltre" id="itemFiltre">
         <div class="filtre_prix itemdrop_menu">
             <div id="filtrePrix" class="pd24w600 itemdrop1">
                 <span>Prix</span>
@@ -66,7 +66,7 @@
         </div>
         <div class="btn_filtre">
 
-            <button class="btn_grand pd24w600" title="Trouver">Trouver</button>
+            <button type="submit" class="btn_grand pd24w600" title="Trouver">Trouver</button>
         </div>
     </div>
 

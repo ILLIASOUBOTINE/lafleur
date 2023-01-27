@@ -45,6 +45,8 @@ html {
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
+ 
+  overflow: hidden;
   /* z-index:1; */
   /* background-size: cover; */
   /* width: 100vw; */
@@ -60,12 +62,12 @@ header {
   justify-content: space-around;
   align-items: center;
   background-color: var(--color-white);
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .logo > img {
-  width: 150px;
-  height: 110px;
+  width: 140px;
+  height: 100px;
 }
 
 /* header phone */
@@ -177,7 +179,7 @@ header {
 
 .cursorscall20:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 
@@ -427,13 +429,14 @@ section {
   right: -350px;
   background: var(--color-gris);
   transition: right 1s;
+  /* display: none; */
 }
 
 .notrelivraison_active {
   width: 320px;
   right: 0;
   transition: right 1s;
- 
+ /* display: none; */
 }
 
 .style_item_list {
@@ -466,7 +469,7 @@ section {
   width: 100%;
   height: 40px;
   border-bottom: 1px solid var(--color-text-main);
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-white);
@@ -475,10 +478,58 @@ section {
   /* display: none; */
 }
 
+/*                   nav seconde                   */
+.nav_seconde {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  z-index: 5;
+  align-self: flex-start;
+  background-color: var(--color-gris);
+  border: none;
+  color: var(--color-text-main);
+}
 
+.filtreProduitNavSeconde {
+
+  position: relative;
+  border: none;
+  min-width: 320px;
+}
+
+#filtreProduit {
+  background: var(--color-gris);
+  border-bottom: none;
+   /* z-index: 5; */
+}
+
+#filtreProduit:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.nav_seconde_filtre {
+  position: absolute;
+  top: 58px;
+  min-width: 320px;
+  background-color: var(--color-gris);
+  border: none;
+  z-index: -5;
+  /* width: 100px;
+  height: 100px; */
+}
+
+.nav_categorie {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
 
 @media screen and (max-width: 1000px) {
+
   .carte {
     margin: 20px 20px;
   }
@@ -490,7 +541,8 @@ section {
 
 @media screen and (max-width: 840px) and (min-width: 400px){
   .nav_left,
-  .idAccount{
+  .idAccount,
+  .nav_seconde{
     display: none;
   }
 
