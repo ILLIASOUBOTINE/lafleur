@@ -1,9 +1,4 @@
-<?php
-$arrVille = ['Lourmarin','Lauris', 'Puget','Cadenet','Bonnieux',];
-
-?>
-
-<div class="itemdrop_menu">
+<form action="#" method="POST" class="itemdrop_menu">
     <div id="filtreProduit" class="pd24w600 itemdrop">
         <span>Filtre produit</span>
         <img src="imgs/icons_triangle-down.svg" alt="">
@@ -33,11 +28,8 @@ $arrVille = ['Lourmarin','Lauris', 'Puget','Cadenet','Bonnieux',];
                 </label>
                 <label class="itemdrop2 int20w400" for="fleur1">
                     <input type="checkbox" id="fleur1" name="fleur" class="marg20">
-                    fleur
+                    fleur1
                 </label>
-
-
-
             </div>
         </div>
         <div class="filtre_categorie itemdrop_menu">
@@ -45,7 +37,39 @@ $arrVille = ['Lourmarin','Lauris', 'Puget','Cadenet','Bonnieux',];
                 <span>Categorie</span>
                 <img src="imgs/icons_triangle-down.svg" alt="">
             </div>
+            <div class="itemdrop_menu dnone" id="itemCategorie">
+                <label class="itemdrop2 int20w400" for="categorie">
+                    <input type="checkbox" id="categorie" name="categorie" class="marg20">
+                    categorie
+                </label>
+                <label class="itemdrop2 int20w400" for="categorie1">
+                    <input type="checkbox" id="categorie1" name="categorie" class="marg20">
+                    categorie1
+                </label>
+            </div>
+        </div>
+        <div class="filtre_couleur itemdrop_menu">
+            <div id="filtreCouleur" class="pd24w600 itemdrop1">
+                <span>Couleur</span>
+                <img src="imgs/icons_triangle-down.svg" alt="">
+            </div>
+            <div class="itemdrop_menu dnone" id="itemCouleur">
+                <label class="itemdrop2 int20w400" for="couleur">
+                    <input type="checkbox" id="couleur" name="couleur" class="marg20">
+                    Couleur
+                </label>
+                <label class="itemdrop2 int20w400" for="couleur1">
+                    <input type="checkbox" id="couleur1" name="couleur" class="marg20">
+                    Couleur1
+                </label>
+            </div>
+        </div>
+        <div class="btn_filtre">
+
+            <button class="btn_grand pd24w600" title="Trouver">Trouver</button>
         </div>
     </div>
-    <div class="filtre_couleur"></div>
-</div>
+
+
+
+</form>

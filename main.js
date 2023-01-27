@@ -4,8 +4,15 @@ const itemdropMenu = document.querySelector('.itemdrop_menu');
 const filtreProduit = document.querySelector('#filtreProduit');
 const filtrePrix = document.querySelector('#filtrePrix');
 const filtreFleur = document.querySelector('#filtreFleur');
+const filtreCategorie = document.querySelector('#filtreCategorie');
+const filtreCouleur = document.querySelector('#filtreCouleur');
+const idLivraison = document.querySelector('.idlivraison');
 const prix = document.querySelector('#prix');
-console.dir(filtreProduit);
+const inputSearchVille = document.querySelector('#inputSearchVille');
+console.dir(inputSearchVille);
+
+
+//  burger menue  
 
 burgerMenu.addEventListener('click', (event)=>{
     dropMenu.classList.toggle('drop_menu_active');
@@ -13,15 +20,32 @@ burgerMenu.addEventListener('click', (event)=>{
     burgerMenu.children[2].classList.toggle('dhidden');
     burgerMenu.children[1].classList.toggle('burger_ligne_active');
     burgerMenu.children[1].children[0].classList.toggle('burger_ligne_activem');
+
+    //for close filtre produit if it is not close
+    document.querySelector('#itemFiltre').classList.add('dnone');
   
 });
 
+//  list filtre 
+
 filtreProduit.addEventListener('click', (event)=>{
     document.querySelector('#itemFiltre').classList.toggle('dnone');
+    document.querySelector('#filtreProduit>img').classList.toggle('icon_triangle');
 });
 
 filtrePrix.addEventListener('click', (event)=>{
     document.querySelector('#itemPrix').classList.toggle('dnone');
+    document.querySelector('#filtrePrix>img').classList.toggle('icon_triangle');
+});
+
+filtreCategorie.addEventListener('click', (event)=>{
+    document.querySelector('#itemCategorie').classList.toggle('dnone');
+    document.querySelector('#filtreCategorie>img').classList.toggle('icon_triangle');
+});
+
+filtreCouleur.addEventListener('click', (event)=>{
+    document.querySelector('#itemCouleur').classList.toggle('dnone');
+    document.querySelector('#filtreCouleur>img').classList.toggle('icon_triangle');
 });
 
 prix.addEventListener('input', (event)=>{
@@ -29,29 +53,36 @@ prix.addEventListener('input', (event)=>{
 });
 
 filtreFleur.addEventListener('click', (event)=>{
+    document.querySelector('#filtreFleur>img').classList.toggle('icon_triangle');
     document.querySelector('#itemFleur').classList.toggle('dnone');
 });
 
+//   for notre Livraison move and remove block
 
+idLivraison.addEventListener('click', (event)=>{
+    document.querySelector('#notrelivraison').classList.toggle('notrelivraison_active');
+});
 
+document.querySelector('#livraisonVilleFermer').addEventListener('click', (event)=>{
+    document.querySelector('#notrelivraison').classList.toggle('notrelivraison_active');
+});
 
+//  pour chercher les villes des livraison
 
-// itemdropMenuTitle.addEventListener('click', (event)=>{
-//     console.log('ytyt');
-//     itemdropMenuTitle.disabled = true;
-//     let setInterval1;
-//     index=0;
-//     let allItem = document.querySelectorAll('.item_ville');
+inputSearchVille.addEventListener("input", (e) => {
+    let str = e.target.value;
+    console.log(str);
+    let villes = document.querySelectorAll('.item_ville');
+    console.log(villes);
+    for (let ville of villes) {
+      if (ville.textContent.toLowerCase().match(str.toLowerCase())){
+        // ville.classList.remove("dnone");
+        ville.style.display = 'flex';
+      } else {
+        ville.style.display = 'none';
+      }
+    }
+  
    
-//         setInterval1 = setInterval(() => {
-//             console.log('ytyt');
-//             allItem[index].classList.toggle('dnone');
-//             // allItem[index].classList.toggle('dposrel'); 
-//             index++;
-//             if (index === allItem.length ) {
-//                  clearInterval(setInterval1);
-//                  itemdropMenuTitle.disabled = false;
-//             } 
-           
-//         }, 200);
-// });
+  });
+
